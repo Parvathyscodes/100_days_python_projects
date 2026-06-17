@@ -2,9 +2,9 @@ name: Daily Rain SMS Checker
 
 on:
   schedule:
-    # This runs automatically every day at 02:30 AM UTC (which is exactly 8:00 AM Indian Standard Time)
+    # This runs automatically every day at 02:30 AM UTC (exactly 8:00 AM Indian Standard Time)
     - cron: '30 2 * * *'
-  workflow_dispatch: # This adds a manual "Run now" button so you can test it anytime!
+  workflow_dispatch: # This adds a manual "Run now" button in GitHub Actions so you can test it anytime!
 
 jobs:
   run-weather-script:
@@ -27,4 +27,4 @@ jobs:
           ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
           API_KEY: ${{ secrets.API_KEY }}
-        run: python main.py
+        run: python "Day 3-Rain, get your Msg/main.py"
