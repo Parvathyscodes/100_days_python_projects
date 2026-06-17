@@ -27,4 +27,6 @@ jobs:
           ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
           AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
           API_KEY: ${{ secrets.API_KEY }}
+          TWILIO_NUMBER: ${{ secrets.TWILIO_NUMBER }}
+          MY_NUMBER: ${{ secrets.MY_NUMBER }}
         run: python "Day 3-Rain, get your Msg/main.py"
