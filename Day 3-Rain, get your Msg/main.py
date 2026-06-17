@@ -6,6 +6,8 @@ from twilio.rest import Client
 account_sid = os.environ["ACCOUNT_SID"]
 auth_token = os.environ["AUTH_TOKEN"]
 api_key = os.environ["API_KEY"]
+twilio_number = os.environ["TWILIO_NUMBER"]
+my_number = os.environ["MY_NUMBER"]
 
 parameters = {
     "lat": 10.1960,
@@ -29,9 +31,9 @@ client = Client(account_sid, auth_token)
 for code in condition_codes:
     if int(code) >= 700:
         message = client.messages.create(
-            body="Hey, It's gonna rain today. Grab your umbrella!",
-            from_="+18143240614",  # Your Twilio Trial Number
-            to="+919497026123",    # Your Verified Phone Number
-        )
+    body="Hey, It is going to rain today. Grab your umbrella!",
+    from_=twilio_number,
+    to=my_number,
+)
         print(f"SMS Sent Successfully! Status: {message.status}")
         break
