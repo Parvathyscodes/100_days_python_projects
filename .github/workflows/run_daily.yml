@@ -1,0 +1,30 @@
+name: Daily Rain SMS Checker
+
+on:
+  schedule:
+    # This runs automatically every day at 02:30 AM UTC (which is exactly 8:00 AM Indian Standard Time)
+    - cron: '30 2 * * *'
+  workflow_dispatch: # This adds a manual "Run now" button so you can test it anytime!
+
+jobs:
+  run-weather-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Project Dependencies
+        run: pip install twilio requests
+
+      - name: Execute Python Script
+        env:
+          ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          API_KEY: ${{ secrets.API_KEY }}
+        run: python main.py
