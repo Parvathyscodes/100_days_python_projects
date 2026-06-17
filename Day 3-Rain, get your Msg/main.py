@@ -29,7 +29,7 @@ for i in range(4):
 client = Client(account_sid, auth_token)
 
 for code in condition_codes:
-    if int(code) >= 700:
+    if int(code) < 700:
         message = client.messages.create(
     body="Hey, It is going to rain today. Grab your umbrella!",
     from_=twilio_number,
