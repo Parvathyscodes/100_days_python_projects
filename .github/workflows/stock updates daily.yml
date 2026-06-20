@@ -26,4 +26,5 @@ jobs:
         run: pip install requests twilio
 
       - name: Run script
+        working-directory: Day 4-TSLA Stock Tracker
         run: python main.py
