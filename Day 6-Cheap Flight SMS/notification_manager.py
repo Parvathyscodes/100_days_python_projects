@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 ACCOUNT_ID=os.environ["ACCOUNT_SID"]
 ACCOUNT_KEY=os.environ["AUTH_TOKEN"]
-MY_NUMBER=os.environ["MY_TWILIO_NUMBER"]
-SEND_TO=os.environ["RECEIVER_NUMBER"]
+MY_NUMBER=os.environ["TWILIO_NUMBER"]
+SEND_TO=os.environ["MY_NUMBER"]
 
 class NotificationManager:
     def send_sms(self,departure_id, arrival_id, airline, cheapest_price, destination):
