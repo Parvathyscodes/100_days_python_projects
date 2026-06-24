@@ -20,7 +20,16 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Run Day 7 script
+      - name: Run script
+        env:
+          env:
+          SHEETY_API_GET: ${{ secrets.SHEETY_API_GET }}
+          FLIGHT_KEY: ${{ secrets.FLIGHT_KEY }}
+          FLIGHT_GET_URL: ${{ secrets.FLIGHT_GET_URL }}
+          ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          TWILIO_NUMBER: ${{ secrets.TWILIO_NUMBER }}
+          MY_NUMBER: ${{ secrets.MY_NUMBER }}
         run: |
           cd "Day 6-Cheap Flight SMS"
           python main.py
