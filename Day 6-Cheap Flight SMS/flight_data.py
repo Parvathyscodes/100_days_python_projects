@@ -26,7 +26,7 @@ class FlightData:
         response.raise_for_status()
         file=response.json()
         if len(file["best_flights"])==0:
-            print(f"No flights found for {row["destination"]}")
+            print(f"No flights found for {row['destination']}")
             return
         cheapest_flight = file["best_flights"][0]
 
