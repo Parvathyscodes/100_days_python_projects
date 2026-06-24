@@ -1,0 +1,26 @@
+name: Day 7 Manual Run
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-day7:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Day 7 script
+        run: |
+          cd "Day 6-Cheap Flight SMS"
+          python main.py
